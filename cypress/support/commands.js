@@ -10,8 +10,14 @@
 //
 //
 // -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
+Cypress.Commands.add('login', (username, password) => { 
+    cy.get('#menu-toggle').click()
+    cy.get('.sidebar-nav > :nth-child(4) > a').click()
+    cy.get('#txt-username').type(username)
+    cy.get('#txt-password').type(password)
+    cy.get('#btn-login').click()
+})
+// 
 //
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
